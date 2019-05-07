@@ -1,7 +1,4 @@
 class Post < ApplicationRecord
-  
-  belongs_to :user
-  has_many :comments
-
-  validates :body, presence: true
+  has_many :comments, dependent: :destroy
+  validates :body, presence: {message: "post can't be blank"}
 end

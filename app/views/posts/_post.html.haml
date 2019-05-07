@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    -unless post.title.nil?
+      %h4.text-justify= post.title
+    %p.text-justify= post.body
+.row
+  .col-md-1
+  .col-md-11
+    .row
+      .col-md-12
+        %strong{class: "comments_count#{post.id}"}= "#{post.comments.count} comments"
+    .row
+      .col-md-12{class: "comments#{post.id}"}
+        -unless post.comments.empty?
+          -post.comments.each do |comment|
+            = render 'comments/comment', comment: comment
+    .row
+      .col-md-12
+        = link_to 'Add commet', new_post_comment_path(post), remote: true, class: 'btn btn-outline-info'
+    %hr
+.row
+  .col-md-12
+    %code= "Posted #{time_ago_in_words(post.created_at)} ago" 
+    %br
+    =link_to 'Edit Post', edit_post_path(post), remote: true, class: 'btn btn-outline-secondary'
+    =link_to 'Delete Post', post_path(post), method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' }
+%hr

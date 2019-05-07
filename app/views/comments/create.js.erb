@@ -1,0 +1,12 @@
+<% if @comment.errors.empty? %>
+  // add the post, show alert and hide modal
+  var comments_count = '.comments_count'+'<%= @post.id =%>'
+  $('.comments'+'<%= @post.id =%>').append(' <%= j render "comment", comment: @comment %>');
+  $(comments_count).empty();
+  $(comments_count).html('<%= @post.comments.count =%>'+' comments');
+  $('.alert-success').html('Comment successfuly created').show();
+  $('#modal-comment').modal('hide');
+<% else %>
+  // show first error
+  $('.alert-error').html('<%= @comment.errors.full_messages[0] %>').show;
+<% end %>

@@ -1,0 +1,8 @@
+.row
+  .col-md-12
+    %em= comment.body
+    %br
+    %code= "Commented #{time_ago_in_words(comment.created_at)} ago"
+    %br
+      =link_to 'Delete comment', [comment.post, comment], method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' }
+%hr

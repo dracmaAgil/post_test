@@ -1,0 +1,9 @@
+%nav.navbar.navbar-fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+  #post-navbar-collapse.collapse.navbar-collapse
+    %ul.nav.navbar-nav.mr-auto
+      %li.nav-item
+        = link_to 'home', root_url, { class: 'nav-link' }
+      %li.nav-item.dropdown
+        =link_to 'Post', '#', { id: 'navbarDropdown', class: 'nav-link dropdown-toggle', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false' }
+        .dropdown-menu{'aria-labelledby' => 'navbarDropdown'}
+          = link_to 'Add post', new_post_path, { class: 'dropdown-item' }

@@ -1,0 +1,9 @@
+<% if @post.errors.empty? %>
+  // add the post, show alert and hide modal
+  $('.feed').prepend(' <%= j render "post", post: @post %>');
+  $('.alert-success').html('Post successfuly created').show();
+  $('#modal-post').modal('hide');
+<% else %>
+  // show first error
+  $('.alert-error').html('<%= @post.errors.full_messages[0] %>').show;
+<% end %>

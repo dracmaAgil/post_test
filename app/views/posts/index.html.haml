@@ -1,0 +1,20 @@
+#container.top-buffer
+  .row
+    .col-md-2
+    .col-md-8
+      %h3.text-center Feed
+      %br
+      = link_to 'Add post', new_post_path, remote: true, class: 'btn btn-outline-primary'
+      %hr
+    .col-md-2
+  %br  
+  .row
+    .col-md-2
+    .col-md-8.feed
+      -if @posts.empty?
+        %h3.text-center there is no posts yet
+      -else
+        - @posts.each do |post|
+          = render 'post', post: post
+    .col-md-2
+

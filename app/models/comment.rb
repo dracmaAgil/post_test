@@ -1,8 +1,4 @@
 class Comment < ApplicationRecord
-  
-  belongs_to :user
   belongs_to :post
-
-  validates :body, presence: true
-  
+  validates :body, presence: {message: "comment can't be blank"}
 end
