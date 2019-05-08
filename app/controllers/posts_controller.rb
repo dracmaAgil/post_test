@@ -1,9 +1,5 @@
 class PostsController < ApplicationController
 
-  def index
-    @posts = Post.all.order('created_at DESC')
-  end
-
   def new
     @post = Post.new
     respond_to do |format|
@@ -16,6 +12,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     begin
       if @post.save
+        Pusher.trigger('posts-channel','new-post', {
+          id: @post.id,
+          title: @post.title,
+          body: @post.body
+        })
         flash[:notice] = 'Post created'
         # redirect_to root_url, notice: 'Created post'
       else

@@ -41,6 +41,7 @@ gem 'jquery-rails'
 # fancy html gems
 gem 'haml-rails', '~> 1.0'
 gem 'font-awesome-sass', '~> 5.3.1'
+gem 'pusher'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -4,5 +4,6 @@
     %br
     %code= "Commented #{time_ago_in_words(comment.created_at)} ago"
     %br
-      =link_to 'Delete comment', [comment.post, comment], method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure?' }
+      =link_to [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } do
+        %i.fas.fa-trash-alt.bigger-130.fa-lg.text-danger
 %hr
