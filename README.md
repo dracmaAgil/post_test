@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project name: post_test. 
 
-Things you may want to cover:
+Author: Julian Alfonso Montes Valdenebro.
 
-* Ruby version
+Prerequisites:
+  Ruby 2.5.1
+  Rails 5.2.3
+  postgresql
 
-* System dependencies
+Database creation:
+  rake db:create
 
-* Configuration
+Database initialization:
+  rake db:migrate
 
-* Database creation
+How to run the test suite:
+  First we need to set up data base, then in command line write this '$ rspec' to run the test suit.
+  Models attributes, validations and relations are tested to ensure we have an valid model.
 
-* Database initialization
+How to run the app:
+  After  you need to write 
+  $ rails s in command line to run the application.
 
-* How to run the test suite
+Code Style:
+  Use rubocop to watch the coding style and do not commit an offense code in the app.
 
-* Services (job queues, cache servers, search engines, etc.)
+Live updates.
+  pusher is configured to get live updates on creating new posts.
 
-* Deployment instructions
+Web server.
+  Puma web server
 
-* ...
+
+
+
