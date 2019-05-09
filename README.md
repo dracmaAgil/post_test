@@ -23,22 +23,24 @@
   First we need to set up data base, then in command line write this '$ rspec' to run the test suit.
   Models attributes, validations and relations are tested to ensure we have an valid model.
 
-* How to run the app:
+ How to run the app:
 
-  After  you need to write 
-  $ rails s in command line to run the application.
+  * After setup the data base you need to write 
+    $ rails s in command line to run the application.
 
-* Code Style:
+Code Style:
   
-  Use rubocop to watch the coding style and do not commit an offense code in the app.
+  * Use rubocop to watch the coding style and do
+    not commit an offense code in the app.
 
-* Live updates.
+Live updates.
   
-  pusher is configured to get live updates on creating new posts.
+  * pusher is configured to get live updates on
+    creating new posts.
 
-* Web server.
+Web server.
   
-  Puma web server
+  * Puma web server
 
 
 
